@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="directoryApp">
+	<head>
+		<title>Testing out this Angular thing</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+		<script type="text/javascript" src="directory.js"></script>
+	</head>
+	<body ng-controller="directoryController">
+		<input type="text" name="search" ng-model="search">
+		<ul>
+			<li ng-repeat="item in list | filter:search">
+				{{item.name}} - {{item.age}}, {{item.town}}
+			</li>
+		</ul>
+		<form ng-submit="addPerson()">
+			<input type="text" placeholder="Name" ng-model="name">
+			<input type="number" placeholder="Age" ng-model="age">
+			<input type="text" placeholder="Town" ng-model="town">
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
+<!-- continue with AngularJS For Everyone Tutorial #6 - Controller As Syntax -->
